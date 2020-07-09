@@ -1,57 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- ----------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------- -->
-<head> <!-- header begins here -->
+<head> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
+  <meta name="description" content="wine101">
+  <meta name="author" content="yuru">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href="./css/style.css" rel="stylesheet">
-  <script type="text/javascript" src="./js/header-functions.js"></script>
+  <script type="text/javascript" src="./js/utils.js"></script>
+</head> 
+<body> 
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Wine101</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="wine-taste.html">Wine Taste</a></li>
+      <li><a href="buy-wine.html">Buying Wine</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="container-fluid">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="content">
 
-</head> <!-- header ends here -->
-<!-- ----------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------- -->
+        <h1> Wine 101</h1>
+        <h2> Beginner's Guide To Wine</h2></br>
+        <h4> Scroll down to learn more about the wine basics!</h4>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-<!-- ---------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------- -->
-<body> <!-- body begins here -->
-
-
-  The quickest of brown foxes.
-
-
-
-
-  <!-- ====================================================== -->
-  <!-- ====================================================== -->
-  <footer>
-    <!-- footer of page begins here -->
-    <script type="text/javascript" src="./js/footer-functions.js"></script>
-  </footer> <!-- footer of page ends here -->
-  <!-- ====================================================== -->
-  <!-- ====================================================== -->
+      </div>
+    <div class="col-sm-6">
+      <img src="img/index.jpg" class="home"/>
+    </div>
+  </div>
+  </div>
+  <br/><br/><br/><br/>
+  <div class = "container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="img/wine-basic.jpg" class="basic"/>
+      </div>
+      <div class="col-sm-7">
+        <h1>Wine Basics</h1></br>
+        <p>Most wine is made with grapes, but they're not like the ones you find in the grocery store. Wine grapes (latin name: Vitis vinifera) are smaller, sweeter, have thick skins, and contain seeds. There are over 1,300 wine grape varieties used in commercial production but only about 100 of these varieties make up 75% of the world's vineyards.
+          Today, the most planted wine grape in the world is Cabernet Sauvignon ("cab-err-nay saw-vin-yon"). Find out more about the basics of wine (and which ones to try) in the following sections:
+        </p><br/>
+        <button class="btn btn-primary" onclick="toggleWine()">What is wine exactly?</button>
+        <div id="wine-definition" style="display:none">
+          <p></br><b>Wine is an alcoholic beverage made with the fermented juice of grapes.</b><br/>
+            Technically, any fruit is capable of being used for wine (i.e., apples, cranberries, plums, etc.), but if it just says “wine” on the label, then it’s made with grapes. (By the way, wine grapes are different than table grapes).
+            The difference between two popular drinks, wine and beer, is that brewing beer involves fermented grains. Simply, wine is made from fruit, and beer is made from grains. There are exceptions –that push the boundaries of beer,–but that story is for another time.</p>
+          <img src="img/wine-glass.jpg" style="width:50%"/>
+        </div>
+        <button class="btn btn-primary" onclick="toggleStyle()">9 primary styles of wine</button>
+        <input type="text" id="myInput" style="display:none" class="form-control" onkeyup="myFunction()" placeholder="Search for Style Name">
+        <div id="appendtable" style="display:none">
+          <script>
+            function myFunction() {
+              var input, filter, ul, li, a, i, txtValue;
+              input = document.getElementById('myInput');
+              filter = input.value.toUpperCase();
+              ul = document.getElementById("appendtable");
+              li = ul.getElementsByTagName('tr');
+             
+              for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("td")[0];
+                txtValue = a.innerHTML;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "block";
+                } else {
+                  li[i].style.display = "none";
+                }
+              }
+            }
+            </script></div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="container-fluid bg-4 text-center">
+    <p>Copyright © Yuru Cao | 2020</p> 
+  </footer>
 
 </body>
-<!-- ---------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------- -->
-<!-- ---------------------------------------------------------------------------------- -->
+
 
 </html>
